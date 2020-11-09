@@ -1,4 +1,4 @@
-insert into users (id, name, ssn) values (100, 'Percival Bragg', '090-74-3132');
+insert into users (id, name, ssn) values (100, 'John Doe', '111-11-1111');
 insert into work_search_logs 
 	(
 		id,
