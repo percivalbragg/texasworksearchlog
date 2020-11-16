@@ -6,6 +6,7 @@ import CreateUserComponent from "./components/CreateUserComponent"
 import ViewLogComponent from "./components/ViewLogComponent"
 import CreateWorkSearchLogComponent from "./components/CreateWorkSearchLogComponent"
 import ListWorkSearchLogComponent from "./components/ListWorkSearchLogComponent"
+import ExportWorkSearchLogComponent from "./components/ExportWorkSearchLogComponent"
 import HeaderComponent from "./components/HeaderComponent"
 import FooterComponent from "./components/FooterComponent"
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path = "/view-log/:id" component = {ViewLogComponent}></Route>
                 <Route path = "/add-work-search-log/:id/:userId" component = {CreateWorkSearchLogComponent}></Route>
                 <Route path = "/diaplay-work-search-log/:id" component = {ListWorkSearchLogComponent}></Route>
+                <Route path = "/export-work-search-log-by-date/:id" component = {ExportWorkSearchLogComponent}></Route>
               </Switch>
           </div>
           <FooterComponent />

@@ -28,6 +28,10 @@ class WorkSearchLogService {
         return axios.delete(USER_API_BASE_URL + '/log/' + id);
     }
 
+    exportWorkSearchLog(userId, fromDate, toDate){
+        return axios.get(USER_API_BASE_URL + '/user/' + userId +'/logs/export/' + fromDate + '/' + toDate);
+    }
+
 }
 
 export default new WorkSearchLogService();

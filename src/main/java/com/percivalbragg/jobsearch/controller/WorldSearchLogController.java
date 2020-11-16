@@ -165,8 +165,9 @@ public class WorldSearchLogController {
 		
 	}
 	
-	@GetMapping("/logs/export/{fromDate}/{toDate}")
-	public void exportToCSVFilterByDates(@PathVariable("fromDate") String fromDate,
+	@GetMapping("/user/{userId}/logs/export/{fromDate}/{toDate}")
+	public void exportToCSVFilterByDates(@PathVariable("userId") Long userId,
+										@PathVariable("fromDate") String fromDate,
 										@PathVariable("toDate") String toDate,
 										HttpServletResponse response) throws IOException {
 		response.setContentType("text/csv");
@@ -177,7 +178,7 @@ public class WorldSearchLogController {
         String headerValue = "attachment; filename=work_search_log_" + currentDateTime + ".csv";
         response.setHeader(headerKey, headerValue);
         
-        List<WorkSearchLog> wsls = wslRepo.findAllByActivityDateBetween(fromDate, toDate);
+        List<WorkSearchLog> wsls = wslRepo.findAllByActivityDateBetween(userId, fromDate, toDate);
         
         ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
         String[] csvHeader = {

@@ -14,7 +14,9 @@ class headerComponent extends Component {
             <div>
                <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="https://www.twc.texas.gov" className="navbar-brand">Texas Workforce Commission Work Search Activity Log</a></div>
+                        <div>
+                            <a href="https://www.twc.texas.gov" className="navbar-brand">Texas Workforce Commission Work Search Activity Log</a>
+                        </div>
                     </nav>
                 </header> 
             </div>

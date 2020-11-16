@@ -13,6 +13,7 @@ class ListUserComponent extends Component {
         this.deleteUser = this.deleteUser.bind(this);
         this.addWorkSearchLog = this.addWorkSearchLog.bind(this);
         this.displayWorkSearchLogs = this.displayWorkSearchLogs.bind(this);
+        this.exportWorkSearchLogsByDate = this.exportWorkSearchLogsByDate.bind(this);
     }
 
     addUser() {
@@ -25,6 +26,10 @@ class ListUserComponent extends Component {
 
     displayWorkSearchLogs(id) {
         this.props.history.push(`/diaplay-work-search-log/${id}`);
+    }
+
+    exportWorkSearchLogsByDate(id) {
+        this.props.history.push(`/export-work-search-log-by-date/${id}`);
     }
 
     deleteUser(id){
@@ -76,6 +81,7 @@ class ListUserComponent extends Component {
                                             <button style={{marginLeft: "10px"}} onClick={ () => this.deleteUser(user.id)} className="btn btn-danger">Delete</button>
                                             <button style={{marginLeft: "10px"}} onClick={ () => this.addWorkSearchLog(user.id)} className="btn btn-info">Add Work Search Log</button> 
                                             <button style={{marginLeft: "10px"}} onClick={ () => this.displayWorkSearchLogs(user.id)} className="btn btn-info">View Work Search Logs</button> 
+                                            <button style={{marginLeft: "10px"}} onClick={ () => this.exportWorkSearchLogsByDate(user.id)} className="btn btn-info">Export Logs By Date</button> 
                                         </td>                                       
                                     </tr> 
                                 )
