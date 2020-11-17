@@ -32,10 +32,12 @@ import com.percivalbragg.jobsearch.dao.UserRepo;
 import com.percivalbragg.jobsearch.dao.WorkSearchLogRepo;
 import com.percivalbragg.jobsearch.model.WorkSearchLog;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:3000")
-public class WorldSearchLogController {
+public class WorkSearchLogController {
 	
 	@Autowired
 	private WorkSearchLogRepo wslRepo;
@@ -43,7 +45,7 @@ public class WorldSearchLogController {
 	@Autowired
 	private UserRepo userRepo;
 	
-	public WorldSearchLogController() {}
+	public WorkSearchLogController() {}
 
 	@GetMapping("/logs")
 	public List<WorkSearchLog> getLogs() {
@@ -165,6 +167,9 @@ public class WorldSearchLogController {
 		
 	}
 	
+	@ApiOperation(value = "Export CSV file by activity date range",
+			notes = "Provide User ID and to and from dates to select output"
+			)
 	@GetMapping("/user/{userId}/logs/export/{fromDate}/{toDate}")
 	public void exportToCSVFilterByDates(@PathVariable("userId") Long userId,
 										@PathVariable("fromDate") String fromDate,
